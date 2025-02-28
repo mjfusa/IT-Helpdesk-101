@@ -1,0 +1,47 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "IT Helpdesk API",
+    "description": "API for managing IT helpdesk cases",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Helpdesk/{id}": {
+      "delete": {
+        "tags": [
+          "Helpdesk"
+        ],
+        "summary": "Delete a helpdesk case",
+        "operationId": "idDeleteCase",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Id of Case",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Helpdesk case deleted"
+          },
+          "404": {
+            "description": "Helpdesk case not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://it-helpdesk-101.azurewebsites.net"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.2/schema.json",
+    "version": "v1.2",
+    "name": "IT Helpdesk 101",
+    "description": "Declarative agent created with Teams Toolkit",
+    "instructions": "$[file('instruction.txt')]",
+    "capabilities": [
+        {
+            "name": "OneDriveAndSharePoint",
+            "items_by_url": [
+                {
+                    "url": "https://m365cpi19787536.sharepoint.com/sites/ITHelpdesk/Shared%20Documents"
+                }
+            ]
+        },
+        {
+            "name": "GraphConnectors",
+            "connections": [
+                {
+                    "connection_id": "ServiceNowKB1"
+                }
+            ]
+        }
+    ],
+    "conversation_starters": [
+        {
+            "title": "Get Connected",
+            "text": "How can I connect my laptop to the office Wi-Fi network?"
+        },
+        {
+            "title": "Show case by id",
+            "text": "Show case be23debf-e04d-49d7-a387-9cd4f696e052"
+        },
+        {
+            "title": "Show all cases",
+            "text": "Show all cases"
+        },
+        {
+            "title": "Create a case",
+            "text": "Create a case with the title 'Test case' and description 'Test case description'"
+        },
+        {
+            "title": "Delete a case",
+            "text": "Delete case [id]"
+        },
+        {
+            "title": "Create starter cases",
+            "text": "Create three helpdesk cases. CreateCases=Yes, Number of cases=3"
+        }
+    ],
+    "actions": [
+        {
+            "id": "action_1",
+            "file": "ai-plugin_3.json"
+        },
+        {
+            "id": "action_2",
+            "file": "ai-plugin_4.json"
+        },
+        {
+            "id": "action_3",
+            "file": "ai-plugin_5.json"
+        },
+        {
+            "id": "action_4",
+            "file": "ai-plugin_6.json"
+        },
+        {
+            "id": "action_5",
+            "file": "ai-plugin_7.json"
+        },
+        {
+            "id": "action_6",
+            "file": "ai-plugin_8.json"
+        }
+    ]
+}

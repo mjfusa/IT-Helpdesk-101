@@ -1,0 +1,104 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "IT Helpdesk API",
+    "description": "API for managing IT helpdesk cases",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Helpdesk/{id}": {
+      "get": {
+        "tags": [
+          "Helpdesk"
+        ],
+        "summary": "Get a helpdesk case by ID",
+        "operationId": "idGetCaseById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Case id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the helpdesk case",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelpdeskCase"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelpdeskCase"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelpdeskCase"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Helpdesk case not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://it-helpdesk-101.azurewebsites.net"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "HelpdeskCase": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "openedBy": {
+            "type": "string"
+          },
+          "openedDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "assignedTo": {
+            "type": "string"
+          },
+          "closedDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "priority": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
