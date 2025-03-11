@@ -10,7 +10,7 @@
         "termsOfUseUrl": "https://www.example.com/termofuse"
     },
     "icons": {
-        "color": "color.png",
+        "color": "192.png",
         "outline": "outline.png"
     },
     "name": {
@@ -18,8 +18,8 @@
         "full": "Full name for IT Helpdesk 101"
     },
     "description": {
-        "short": "Short description for IT Helpdesk 101",
-        "full": "Full description for IT Helpdesk 101"
+        "short": "This agent provides IT helpdesk support.",
+        "full": "This agent offers IT helpdesk support, assisting with common IT issues like connecting to the office Wi-Fi network and managing your cases. You can create new cases, update existing ones, and check their status all from within M365 Copilot Chat."
     },
     "accentColor": "#FFFFFF",
     "composeExtensions": [],
