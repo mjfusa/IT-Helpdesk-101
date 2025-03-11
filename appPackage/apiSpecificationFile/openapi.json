@@ -1,0 +1,313 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "IT Helpdesk API",
+    "description": "API for managing IT helpdesk cases",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://it-helpdesk-101.azurewebsites.net"
+    }
+  ],
+  "paths": {
+    "/api/Helpdesk/{id}": {
+      "delete": {
+        "tags": [
+          "Helpdesk"
+        ],
+        "summary": "Delete a helpdesk case",
+        "description": "Deletes a helpdesk case by its ID",
+        "operationId": "idDeleteCase",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of Case",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Helpdesk case deleted"
+          },
+          "404": {
+            "description": "Helpdesk case not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Helpdesk"
+        ],
+        "summary": "Get a helpdesk case by ID",
+        "description": "Returns a helpdesk case by its ID",
+        "operationId": "idGetCaseById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Case id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the helpdesk case",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelpdeskCase"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelpdeskCase"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelpdeskCase"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Helpdesk case not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Helpdesk"
+        ],
+        "summary": "Update an existing helpdesk case",
+        "description": "Updates an existing helpdesk case",
+        "operationId": "idUpdateCase",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of Case",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "title",
+            "in": "query",
+            "description": "Title of the case",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "description": "Description of the case",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Status of the case",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "priority",
+            "in": "query",
+            "description": "Priority of the case",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assignedUser",
+            "in": "query",
+            "description": "Assigned user of the case",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Helpdesk case updated"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Helpdesk case not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/api/Helpdesk": {
+      "get": {
+        "tags": [
+          "Helpdesk"
+        ],
+        "summary": "Get all helpdesk cases",
+        "description": "Returns all helpdesk cases",
+        "operationId": "idGetAllCases",
+        "responses": {
+          "200": {
+            "description": "Returns all helpdesk cases",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HelpdeskCase"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HelpdeskCase"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HelpdeskCase"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Helpdesk"
+        ],
+        "summary": "Create a new helpdesk case",
+        "description": "Creates a new helpdesk case",
+        "operationId": "idCreateCase",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HelpdeskCase"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HelpdeskCase"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/HelpdeskCase"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Helpdesk case created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelpdeskCase"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelpdeskCase"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelpdeskCase"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HelpdeskCase": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "openedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "openedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "assignedTo": {
+            "type": "string",
+            "nullable": true
+          },
+          "closedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "priority": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

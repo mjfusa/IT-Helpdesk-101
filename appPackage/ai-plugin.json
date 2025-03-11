@@ -1,0 +1,47 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
+    "schema_version": "v2.2",
+    "name_for_human": "IT Helpdesk 101",
+    "description_for_human": "API for managing IT helpdesk cases",
+    "namespace": "ithelpdesk101",
+    "functions": [
+        {
+            "name": "idDeleteCase",
+            "description": "Deletes a helpdesk case by its ID"
+        },
+        {
+            "name": "idGetCaseById",
+            "description": "Returns a helpdesk case by its ID"
+        },
+        {
+            "name": "idUpdateCase",
+            "description": "Updates an existing helpdesk case"
+        },
+        {
+            "name": "idGetAllCases",
+            "description": "Returns all helpdesk cases"
+        },
+        {
+            "name": "idCreateCase",
+            "description": "Creates a new helpdesk case"
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "None"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/openapi.json"
+            },
+            "run_for_functions": [
+                "idDeleteCase",
+                "idGetCaseById",
+                "idUpdateCase",
+                "idGetAllCases",
+                "idCreateCase"
+            ]
+        }
+    ]
+}

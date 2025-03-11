@@ -28,50 +28,30 @@
             "text": "How can I connect my laptop to the office Wi-Fi network?"
         },
         {
-            "title": "Show case by id",
-            "text": "Show case be23debf-e04d-49d7-a387-9cd4f696e052"
-        },
-        {
             "title": "Show all cases",
             "text": "Show all cases"
         },
         {
+            "title": "Show case by id",
+            "text": "Show case 0f66832a-35f8-4e79-a97c-53f1a366cd15"
+        },
+        {
             "title": "Create a case",
-            "text": "Create a case with the title 'Test case' and description 'Test case description'"
+            "text": "Create a case with the title 'Problem with Outlook' and description 'Outlook is not launching after update.'"
+        },
+        {
+            "title": "Update a case",
+            "text": "Update case 173a8447-5bf6-4047-8af9-1ee76000bc09 with the description with 'Windows update fails to install. The update is KB78302 a cumulative update for Windows 11 24H2. After many retries, the update will not install.' and status to 'In Progress'"
         },
         {
             "title": "Delete a case",
-            "text": "Delete case [id]"
-        },
-        {
-            "title": "Create starter cases",
-            "text": "Create three helpdesk cases. CreateCases=Yes, Number of cases=3"
+            "text": "Delete case 173a8447-5bf6-4047-8af9-1ee76000bc09"
         }
     ],
     "actions": [
         {
             "id": "action_1",
-            "file": "ai-plugin_3.json"
-        },
-        {
-            "id": "action_2",
-            "file": "ai-plugin_4.json"
-        },
-        {
-            "id": "action_3",
-            "file": "ai-plugin_5.json"
-        },
-        {
-            "id": "action_4",
-            "file": "ai-plugin_6.json"
-        },
-        {
-            "id": "action_5",
-            "file": "ai-plugin_7.json"
-        },
-        {
-            "id": "action_6",
-            "file": "ai-plugin_8.json"
+            "file": "ai-plugin.json"
         }
     ]
 }
